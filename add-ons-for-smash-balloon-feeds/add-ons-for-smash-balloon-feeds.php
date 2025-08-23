@@ -3,7 +3,7 @@
  * Plugin Name: Add-ons for Smash Balloon Feeds
  * Plugin URI: https://github.com/vincentbitter/add-ons-for-all-in-one-security
  * Description: Extend Smash Balloon plugins like Custom Facebook Feed with additional features.
- * Version: 0.0.0
+ * Version: 0.1.0
  * Requires at least: 5.0
  * Requires PHP: 5.6
  * Author: Vincent Bitter
