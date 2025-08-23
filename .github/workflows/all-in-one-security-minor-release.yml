@@ -37,7 +37,7 @@ jobs:
 
       - name: Create new tag
         run: |
-          git tag -a "all-in-one-security-v$GitVersion_FullSemVer" -m "Release Add-ons for All-In-One-Security v$GitVersion_FullSemVer"
+          git tag -a "add-ons-for-all-in-one-security-v$GitVersion_FullSemVer" -m "Release Add-ons for All-In-One-Security v$GitVersion_FullSemVer"
           git push --follow-tags origin main
 
       - name: Create zip file

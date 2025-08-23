@@ -1,5 +1,5 @@
 mode: ContinuousDeployment
-tag-prefix: "all-in-one-security-v"
+tag-prefix: "add-ons-for-all-in-one-security-v"
 branches:
   main:
     increment: Minor

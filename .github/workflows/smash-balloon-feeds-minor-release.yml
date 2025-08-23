@@ -37,7 +37,7 @@ jobs:
 
       - name: Create new tag
         run: |
-          git tag -a "smash-balloon-feeds-v$GitVersion_FullSemVer" -m "Release Add-ons for Smash Balloon Feeds v$GitVersion_FullSemVer"
+          git tag -a "add-ons-for-smash-balloon-feeds-v$GitVersion_FullSemVer" -m "Release Add-ons for Smash Balloon Feeds v$GitVersion_FullSemVer"
           git push --follow-tags origin main
 
       - name: Create zip file

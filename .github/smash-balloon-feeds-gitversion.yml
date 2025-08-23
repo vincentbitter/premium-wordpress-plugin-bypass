@@ -1,5 +1,5 @@
 mode: ContinuousDeployment
-tag-prefix: "smash-balloon-feeds-v"
+tag-prefix: "add-ons-for-smash-balloon-feeds-v"
 branches:
   main:
     increment: Minor
