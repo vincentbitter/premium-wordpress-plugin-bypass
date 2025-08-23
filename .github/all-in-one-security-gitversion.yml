@@ -1,0 +1,6 @@
+mode: ContinuousDeployment
+tag-prefix: "all-in-one-security-v"
+branches:
+  main:
+    increment: Minor
+    regex: main$

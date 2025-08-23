@@ -1,0 +1,6 @@
+mode: ContinuousDeployment
+tag-prefix: "smash-balloon-feeds-v"
+branches:
+  main:
+    increment: Minor
+    regex: main$

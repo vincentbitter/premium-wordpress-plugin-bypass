@@ -1,0 +1,53 @@
+name: All-In-One Security - Minor release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Use GitVersion
+        uses: gittools/actions/gitversion/setup@v3.2.1
+        with:
+          versionSpec: "6.3.x"
+
+      - name: Configure Git client
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "Github Actions"
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Determine next version
+        uses: gittools/actions/gitversion/execute@v3.2.1
+        with:
+          useConfigFile: true
+          configFilePath: .github/all-in-one-security-gitversion.yml
+
+      - name: Update version in files
+        run: |
+          sed -i "s/ \* Version:.*/ \* Version: $GitVersion_FullSemVer/" add-ons-for-all-in-one-security.php
+          git commit -am "Update Add-ons for All-In-One-Security version to $GitVersion_FullSemVer"
+
+      - name: Create new tag
+        run: |
+          git tag -a "all-in-one-security-v$GitVersion_FullSemVer" -m "Release Add-ons for All-In-One-Security v$GitVersion_FullSemVer"
+          git push --follow-tags origin main
+
+      - name: Create zip file
+        run: |
+          git archive --format zip --output add-ons-for-all-in-one-security.zip HEAD add-ons-for-all-in-one-security
+
+      - name: Create GitHub release
+        run: |
+          gh release create v${{ env.GitVersion_FullSemVer }} \
+            ${{github.workspace}}/add-ons-for-all-in-one-security.zip \
+            --title "Add-ons for All-In-One-Security v${{ env.GitVersion_FullSemVer }}"
+        env:
+          GH_TOKEN: ${{ github.token }}
