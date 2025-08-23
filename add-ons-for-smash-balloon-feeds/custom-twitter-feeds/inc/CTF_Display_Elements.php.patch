@@ -1,0 +1,9 @@
+[
+    {
+        "op": "replace",
+        "find": "$post_media_text     .= ctf_get_fa_el( 'fa-picture-o' );",
+        "value": "$post_media_text     .= '<img src=\"' . $post_media[0]['media_url_https'] . '\" class=\"ctf-tweet-media-image\" />';"
+    }
+]
+                        
+                        
