@@ -46,7 +46,7 @@ jobs:
 
       - name: Create GitHub release
         run: |
-          gh release create v${{ env.GitVersion_FullSemVer }} \
+          gh release create add-ons-for-smash-balloon-feeds-v${{ env.GitVersion_FullSemVer }} \
             ${{github.workspace}}/add-ons-for-smash-balloon-feeds.zip \
             --title "Add-ons for Smash Balloon Feeds v${{ env.GitVersion_FullSemVer }}"
         env:

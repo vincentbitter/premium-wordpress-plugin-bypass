@@ -46,7 +46,7 @@ jobs:
 
       - name: Create GitHub release
         run: |
-          gh release create v${{ env.GitVersion_FullSemVer }} \
+          gh release create add-ons-for-all-in-one-security-v${{ env.GitVersion_FullSemVer }} \
             ${{github.workspace}}/add-ons-for-all-in-one-security.zip \
             --title "Add-ons for All-In-One-Security v${{ env.GitVersion_FullSemVer }}"
         env:
