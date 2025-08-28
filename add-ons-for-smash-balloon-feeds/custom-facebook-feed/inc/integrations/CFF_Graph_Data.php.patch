@@ -1,0 +1,7 @@
+[
+    {
+        "op": "replace",
+        "find": "$cache_type === 'background'",
+        "value": "$cache_type === 'background_pro'"
+    }
+]

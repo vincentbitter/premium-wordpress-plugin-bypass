@@ -5,6 +5,7 @@ This plugin enhances the free version of [Custom Twitter Feeds](https://wordpres
 ## ⚙️ Features
 
 - Facebook: Show photos in posts.
+- Facebook: Retrieve posts based on Caching settings instead of once a week.
 - Twitter: Show photos in posts (only if one!).
 - Twitter: Set cache expiry period.
 
